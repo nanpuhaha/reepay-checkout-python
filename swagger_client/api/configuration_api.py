@@ -33,7 +33,7 @@ class ConfigurationApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_configuration(self, **kwargs):  # noqa: E501
+    def create_configuration(self, **kwargs):    # noqa: E501
         """Create configuration  # noqa: E501
 
           # noqa: E501
@@ -49,13 +49,9 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_configuration_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.create_configuration_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.create_configuration_with_http_info(**kwargs)  # noqa: E501
 
-    def create_configuration_with_http_info(self, **kwargs):  # noqa: E501
+    def create_configuration_with_http_info(self, **kwargs):    # noqa: E501
         """Create configuration  # noqa: E501
 
           # noqa: E501
@@ -71,11 +67,13 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -93,17 +91,13 @@ class ConfigurationApi(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -128,7 +122,7 @@ class ConfigurationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_configuration(self, handle, **kwargs):  # noqa: E501
+    def delete_configuration(self, handle, **kwargs):    # noqa: E501
         """Delete configuration  # noqa: E501
 
           # noqa: E501
@@ -144,13 +138,9 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_configuration_with_http_info(handle, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_configuration_with_http_info(handle, **kwargs)  # noqa: E501
-            return data
+        return self.delete_configuration_with_http_info(handle, **kwargs)  # noqa: E501
 
-    def delete_configuration_with_http_info(self, handle, **kwargs):  # noqa: E501
+    def delete_configuration_with_http_info(self, handle, **kwargs):    # noqa: E501
         """Delete configuration  # noqa: E501
 
           # noqa: E501
@@ -166,11 +156,13 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
 
-        all_params = ['handle']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'handle',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -188,21 +180,16 @@ class ConfigurationApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'handle' in params:
-            path_params['handle'] = params['handle']  # noqa: E501
-
+        path_params = {'handle': params['handle']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -223,7 +210,7 @@ class ConfigurationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_configuration(self, handle, **kwargs):  # noqa: E501
+    def get_configuration(self, handle, **kwargs):    # noqa: E501
         """Get configuration  # noqa: E501
 
           # noqa: E501
@@ -239,13 +226,9 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_configuration_with_http_info(handle, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_configuration_with_http_info(handle, **kwargs)  # noqa: E501
-            return data
+        return self.get_configuration_with_http_info(handle, **kwargs)  # noqa: E501
 
-    def get_configuration_with_http_info(self, handle, **kwargs):  # noqa: E501
+    def get_configuration_with_http_info(self, handle, **kwargs):    # noqa: E501
         """Get configuration  # noqa: E501
 
           # noqa: E501
@@ -261,11 +244,13 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
 
-        all_params = ['handle']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'handle',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -283,21 +268,16 @@ class ConfigurationApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'handle' in params:
-            path_params['handle'] = params['handle']  # noqa: E501
-
+        path_params = {'handle': params['handle']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -318,7 +298,7 @@ class ConfigurationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_configurations(self, **kwargs):  # noqa: E501
+    def get_configurations(self, **kwargs):    # noqa: E501
         """Get configurations  # noqa: E501
 
           # noqa: E501
@@ -333,13 +313,9 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_configurations_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_configurations_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.get_configurations_with_http_info(**kwargs)  # noqa: E501
 
-    def get_configurations_with_http_info(self, **kwargs):  # noqa: E501
+    def get_configurations_with_http_info(self, **kwargs):    # noqa: E501
         """Get configurations  # noqa: E501
 
           # noqa: E501
@@ -354,11 +330,12 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -376,15 +353,13 @@ class ConfigurationApi(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -405,7 +380,7 @@ class ConfigurationApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_configuration(self, handle, **kwargs):  # noqa: E501
+    def update_configuration(self, handle, **kwargs):    # noqa: E501
         """Update configuration  # noqa: E501
 
           # noqa: E501
@@ -422,13 +397,9 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_configuration_with_http_info(handle, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_configuration_with_http_info(handle, **kwargs)  # noqa: E501
-            return data
+        return self.update_configuration_with_http_info(handle, **kwargs)  # noqa: E501
 
-    def update_configuration_with_http_info(self, handle, **kwargs):  # noqa: E501
+    def update_configuration_with_http_info(self, handle, **kwargs):    # noqa: E501
         """Update configuration  # noqa: E501
 
           # noqa: E501
@@ -445,11 +416,14 @@ class ConfigurationApi(object):
                  returns the request thread.
         """
 
-        all_params = ['handle', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'handle',
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -467,23 +441,16 @@ class ConfigurationApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'handle' in params:
-            path_params['handle'] = params['handle']  # noqa: E501
-
+        path_params = {'handle': params['handle']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501

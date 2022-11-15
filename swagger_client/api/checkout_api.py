@@ -33,7 +33,7 @@ class CheckoutApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def charge_checkout_session(self, id, **kwargs):  # noqa: E501
+    def charge_checkout_session(self, id, **kwargs):    # noqa: E501
         """Finish charge using source  # noqa: E501
 
           # noqa: E501
@@ -50,13 +50,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.charge_checkout_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.charge_checkout_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.charge_checkout_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def charge_checkout_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def charge_checkout_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Finish charge using source  # noqa: E501
 
           # noqa: E501
@@ -73,11 +69,14 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -95,23 +94,16 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -132,7 +124,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_applepay_session(self, id, **kwargs):  # noqa: E501
+    def create_applepay_session(self, id, **kwargs):    # noqa: E501
         """Create Apple Pay session  # noqa: E501
 
           # noqa: E501
@@ -148,13 +140,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_applepay_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_applepay_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.create_applepay_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def create_applepay_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def create_applepay_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Create Apple Pay session  # noqa: E501
 
           # noqa: E501
@@ -170,11 +158,13 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -192,21 +182,16 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -227,7 +212,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_googlepay_session(self, id, **kwargs):  # noqa: E501
+    def create_googlepay_session(self, id, **kwargs):    # noqa: E501
         """Create Google Pay session  # noqa: E501
 
           # noqa: E501
@@ -243,13 +228,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_googlepay_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_googlepay_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.create_googlepay_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def create_googlepay_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def create_googlepay_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Create Google Pay session  # noqa: E501
 
           # noqa: E501
@@ -265,11 +246,13 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -287,21 +270,16 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -322,7 +300,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_mpo_session(self, id, **kwargs):  # noqa: E501
+    def create_mpo_session(self, id, **kwargs):    # noqa: E501
         """Create MobilePay Online session  # noqa: E501
 
           # noqa: E501
@@ -339,13 +317,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_mpo_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_mpo_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.create_mpo_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def create_mpo_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def create_mpo_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Create MobilePay Online session  # noqa: E501
 
           # noqa: E501
@@ -362,11 +336,14 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -384,23 +361,16 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -421,7 +391,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_paypal_session(self, id, **kwargs):  # noqa: E501
+    def create_paypal_session(self, id, **kwargs):    # noqa: E501
         """Create PayPal session  # noqa: E501
 
           # noqa: E501
@@ -437,13 +407,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_paypal_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_paypal_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.create_paypal_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def create_paypal_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def create_paypal_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Create PayPal session  # noqa: E501
 
           # noqa: E501
@@ -459,11 +425,13 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -481,21 +449,16 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -516,7 +479,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_pgw_session(self, id, **kwargs):  # noqa: E501
+    def create_pgw_session(self, id, **kwargs):    # noqa: E501
         """Create pgw session  # noqa: E501
 
           # noqa: E501
@@ -533,13 +496,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_pgw_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_pgw_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.create_pgw_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def create_pgw_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def create_pgw_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Create pgw session  # noqa: E501
 
           # noqa: E501
@@ -556,11 +515,14 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -578,23 +540,16 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -615,7 +570,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_resurs_session(self, id, **kwargs):  # noqa: E501
+    def create_resurs_session(self, id, **kwargs):    # noqa: E501
         """Create Resurs session  # noqa: E501
 
           # noqa: E501
@@ -632,13 +587,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_resurs_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_resurs_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.create_resurs_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def create_resurs_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def create_resurs_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Create Resurs session  # noqa: E501
 
           # noqa: E501
@@ -655,11 +606,14 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -677,23 +631,16 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -714,7 +661,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_viabill_session(self, id, **kwargs):  # noqa: E501
+    def create_viabill_session(self, id, **kwargs):    # noqa: E501
         """Create ViaBill session  # noqa: E501
 
           # noqa: E501
@@ -731,13 +678,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_viabill_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_viabill_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.create_viabill_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def create_viabill_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def create_viabill_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Create ViaBill session  # noqa: E501
 
           # noqa: E501
@@ -754,11 +697,14 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -776,23 +722,16 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -813,7 +752,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_checkout_session(self, id, **kwargs):  # noqa: E501
+    def get_checkout_session(self, id, **kwargs):    # noqa: E501
         """Get checkout session data  # noqa: E501
 
           # noqa: E501
@@ -829,13 +768,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_checkout_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_checkout_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.get_checkout_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def get_checkout_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def get_checkout_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Get checkout session data  # noqa: E501
 
           # noqa: E501
@@ -851,11 +786,13 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -873,21 +810,16 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -908,7 +840,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_resurs_payment_method_cost(self, id, **kwargs):  # noqa: E501
+    def get_resurs_payment_method_cost(self, id, **kwargs):    # noqa: E501
         """Get HTML with cost of Resurs payment method  # noqa: E501
 
           # noqa: E501
@@ -925,13 +857,9 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_resurs_payment_method_cost_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_resurs_payment_method_cost_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.get_resurs_payment_method_cost_with_http_info(id, **kwargs)  # noqa: E501
 
-    def get_resurs_payment_method_cost_with_http_info(self, id, **kwargs):  # noqa: E501
+    def get_resurs_payment_method_cost_with_http_info(self, id, **kwargs):    # noqa: E501
         """Get HTML with cost of Resurs payment method  # noqa: E501
 
           # noqa: E501
@@ -948,11 +876,14 @@ class CheckoutApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -970,24 +901,14 @@ class CheckoutApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
-
+        body_params = params.get('body')
+        header_params = {'Accept': self.api_client.select_header_accept(['text/html'])}
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -1007,7 +928,7 @@ class CheckoutApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_resurs_payment_methods(self, id, **kwargs):  # noqa: E501
+    def get_resurs_payment_methods(self, id, **kwargs):    # noqa: E501
         """Get Resurs payment methods  # noqa: E501
 
           # noqa: E501
@@ -1023,11 +944,7 @@ class CheckoutApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_resurs_payment_methods_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_resurs_payment_methods_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.get_resurs_payment_methods_with_http_info(id, **kwargs)  # noqa: E501
 
     def get_resurs_payment_methods_with_http_info(self, id, **kwargs):  # noqa: E501
         """Get Resurs payment methods  # noqa: E501

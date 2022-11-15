@@ -33,7 +33,7 @@ class SignupApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_signup_page(self, **kwargs):  # noqa: E501
+    def create_signup_page(self, **kwargs):    # noqa: E501
         """Create signup page  # noqa: E501
 
           # noqa: E501
@@ -49,13 +49,9 @@ class SignupApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_signup_page_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.create_signup_page_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.create_signup_page_with_http_info(**kwargs)  # noqa: E501
 
-    def create_signup_page_with_http_info(self, **kwargs):  # noqa: E501
+    def create_signup_page_with_http_info(self, **kwargs):    # noqa: E501
         """Create signup page  # noqa: E501
 
           # noqa: E501
@@ -71,11 +67,13 @@ class SignupApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -93,17 +91,13 @@ class SignupApi(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -124,7 +118,7 @@ class SignupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_signup_page(self, id, **kwargs):  # noqa: E501
+    def delete_signup_page(self, id, **kwargs):    # noqa: E501
         """Delete signup page  # noqa: E501
 
           # noqa: E501
@@ -140,13 +134,9 @@ class SignupApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_signup_page_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_signup_page_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.delete_signup_page_with_http_info(id, **kwargs)  # noqa: E501
 
-    def delete_signup_page_with_http_info(self, id, **kwargs):  # noqa: E501
+    def delete_signup_page_with_http_info(self, id, **kwargs):    # noqa: E501
         """Delete signup page  # noqa: E501
 
           # noqa: E501
@@ -162,11 +152,13 @@ class SignupApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -184,21 +176,16 @@ class SignupApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -219,7 +206,7 @@ class SignupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_signup_page(self, id, **kwargs):  # noqa: E501
+    def get_signup_page(self, id, **kwargs):    # noqa: E501
         """Get signup page  # noqa: E501
 
           # noqa: E501
@@ -235,13 +222,9 @@ class SignupApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_signup_page_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_signup_page_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.get_signup_page_with_http_info(id, **kwargs)  # noqa: E501
 
-    def get_signup_page_with_http_info(self, id, **kwargs):  # noqa: E501
+    def get_signup_page_with_http_info(self, id, **kwargs):    # noqa: E501
         """Get signup page  # noqa: E501
 
           # noqa: E501
@@ -257,11 +240,13 @@ class SignupApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -279,21 +264,16 @@ class SignupApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -314,7 +294,7 @@ class SignupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_signup_page_signup(self, id, **kwargs):  # noqa: E501
+    def get_signup_page_signup(self, id, **kwargs):    # noqa: E501
         """Get signup page signup data  # noqa: E501
 
           # noqa: E501
@@ -331,13 +311,9 @@ class SignupApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_signup_page_signup_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_signup_page_signup_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.get_signup_page_signup_with_http_info(id, **kwargs)  # noqa: E501
 
-    def get_signup_page_signup_with_http_info(self, id, **kwargs):  # noqa: E501
+    def get_signup_page_signup_with_http_info(self, id, **kwargs):    # noqa: E501
         """Get signup page signup data  # noqa: E501
 
           # noqa: E501
@@ -354,11 +330,14 @@ class SignupApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'coupon']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'coupon',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -376,23 +355,18 @@ class SignupApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
         if 'coupon' in params:
             query_params.append(('coupon', params['coupon']))  # noqa: E501
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -413,7 +387,7 @@ class SignupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_signup_pages(self, **kwargs):  # noqa: E501
+    def get_signup_pages(self, **kwargs):    # noqa: E501
         """Get signup pages  # noqa: E501
 
           # noqa: E501
@@ -431,13 +405,9 @@ class SignupApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_signup_pages_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_signup_pages_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.get_signup_pages_with_http_info(**kwargs)  # noqa: E501
 
-    def get_signup_pages_with_http_info(self, **kwargs):  # noqa: E501
+    def get_signup_pages_with_http_info(self, **kwargs):    # noqa: E501
         """Get signup pages  # noqa: E501
 
           # noqa: E501
@@ -455,11 +425,15 @@ class SignupApi(object):
                  returns the request thread.
         """
 
-        all_params = ['size', 'plan', 'created_before']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'size',
+            'plan',
+            'created_before',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -487,15 +461,13 @@ class SignupApi(object):
         if 'created_before' in params:
             query_params.append(('created_before', params['created_before']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -516,7 +488,7 @@ class SignupApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_signup_page(self, id, **kwargs):  # noqa: E501
+    def update_signup_page(self, id, **kwargs):    # noqa: E501
         """Update signup page  # noqa: E501
 
           # noqa: E501
@@ -533,13 +505,9 @@ class SignupApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_signup_page_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_signup_page_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.update_signup_page_with_http_info(id, **kwargs)  # noqa: E501
 
-    def update_signup_page_with_http_info(self, id, **kwargs):  # noqa: E501
+    def update_signup_page_with_http_info(self, id, **kwargs):    # noqa: E501
         """Update signup page  # noqa: E501
 
           # noqa: E501
@@ -556,11 +524,14 @@ class SignupApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -578,23 +549,16 @@ class SignupApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501

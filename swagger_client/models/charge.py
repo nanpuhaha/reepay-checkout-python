@@ -230,7 +230,7 @@ class Charge(object):
         """
         if amount is None:
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
-        if amount is not None and amount < 0:  # noqa: E501
+        if amount < 0:  # noqa: E501
             raise ValueError("Invalid value for `amount`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._amount = amount
@@ -635,10 +635,7 @@ class Charge(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Charge):
-            return False
-
-        return self.__dict__ == other.__dict__
+        return self.__dict__ == other.__dict__ if isinstance(other, Charge) else False
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""

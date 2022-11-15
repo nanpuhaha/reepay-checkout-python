@@ -166,7 +166,7 @@ class AddOn(object):
         """
         if amount is None:
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
-        if amount is not None and amount < 0:  # noqa: E501
+        if amount < 0:  # noqa: E501
             raise ValueError("Invalid value for `amount`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._amount = amount
@@ -191,10 +191,11 @@ class AddOn(object):
         :param vat: The vat of this AddOn.  # noqa: E501
         :type: float
         """
-        if vat is not None and vat > 1:  # noqa: E501
-            raise ValueError("Invalid value for `vat`, must be a value less than or equal to `1`")  # noqa: E501
-        if vat is not None and vat < 0:  # noqa: E501
-            raise ValueError("Invalid value for `vat`, must be a value greater than or equal to `0`")  # noqa: E501
+        if vat is not None:
+            if vat > 1:
+                raise ValueError("Invalid value for `vat`, must be a value less than or equal to `1`")  # noqa: E501
+            if vat < 0:
+                raise ValueError("Invalid value for `vat`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._vat = vat
 
@@ -439,10 +440,7 @@ class AddOn(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, AddOn):
-            return False
-
-        return self.__dict__ == other.__dict__
+        return self.__dict__ == other.__dict__ if isinstance(other, AddOn) else False
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""

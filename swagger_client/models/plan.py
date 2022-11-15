@@ -266,10 +266,11 @@ class Plan(object):
         :param vat: The vat of this Plan.  # noqa: E501
         :type: float
         """
-        if vat is not None and vat > 1:  # noqa: E501
-            raise ValueError("Invalid value for `vat`, must be a value less than or equal to `1`")  # noqa: E501
-        if vat is not None and vat < 0:  # noqa: E501
-            raise ValueError("Invalid value for `vat`, must be a value greater than or equal to `0`")  # noqa: E501
+        if vat is not None:
+            if vat > 1:
+                raise ValueError("Invalid value for `vat`, must be a value less than or equal to `1`")  # noqa: E501
+            if vat < 0:
+                raise ValueError("Invalid value for `vat`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._vat = vat
 
@@ -295,7 +296,7 @@ class Plan(object):
         """
         if amount is None:
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
-        if amount is not None and amount < 0:  # noqa: E501
+        if amount < 0:  # noqa: E501
             raise ValueError("Invalid value for `amount`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._amount = amount
@@ -395,7 +396,7 @@ class Plan(object):
         """
         if version is None:
             raise ValueError("Invalid value for `version`, must not be `None`")  # noqa: E501
-        if version is not None and version < 1:  # noqa: E501
+        if version < 1:  # noqa: E501
             raise ValueError("Invalid value for `version`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._version = version
@@ -855,7 +856,7 @@ class Plan(object):
         """
         if interval_length is None:
             raise ValueError("Invalid value for `interval_length`, must not be `None`")  # noqa: E501
-        if interval_length is not None and interval_length < 1:  # noqa: E501
+        if interval_length < 1:  # noqa: E501
             raise ValueError("Invalid value for `interval_length`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._interval_length = interval_length
@@ -911,10 +912,11 @@ class Plan(object):
         :param schedule_fixed_day: The schedule_fixed_day of this Plan.  # noqa: E501
         :type: int
         """
-        if schedule_fixed_day is not None and schedule_fixed_day > 28:  # noqa: E501
-            raise ValueError("Invalid value for `schedule_fixed_day`, must be a value less than or equal to `28`")  # noqa: E501
-        if schedule_fixed_day is not None and schedule_fixed_day < 1:  # noqa: E501
-            raise ValueError("Invalid value for `schedule_fixed_day`, must be a value greater than or equal to `1`")  # noqa: E501
+        if schedule_fixed_day is not None:
+            if schedule_fixed_day > 28:
+                raise ValueError("Invalid value for `schedule_fixed_day`, must be a value less than or equal to `28`")  # noqa: E501
+            if schedule_fixed_day < 1:
+                raise ValueError("Invalid value for `schedule_fixed_day`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._schedule_fixed_day = schedule_fixed_day
 
@@ -938,10 +940,11 @@ class Plan(object):
         :param base_month: The base_month of this Plan.  # noqa: E501
         :type: int
         """
-        if base_month is not None and base_month > 12:  # noqa: E501
-            raise ValueError("Invalid value for `base_month`, must be a value less than or equal to `12`")  # noqa: E501
-        if base_month is not None and base_month < 1:  # noqa: E501
-            raise ValueError("Invalid value for `base_month`, must be a value greater than or equal to `1`")  # noqa: E501
+        if base_month is not None:
+            if base_month > 12:
+                raise ValueError("Invalid value for `base_month`, must be a value less than or equal to `12`")  # noqa: E501
+            if base_month < 1:
+                raise ValueError("Invalid value for `base_month`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._base_month = base_month
 
@@ -1078,10 +1081,7 @@ class Plan(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Plan):
-            return False
-
-        return self.__dict__ == other.__dict__
+        return self.__dict__ == other.__dict__ if isinstance(other, Plan) else False
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""

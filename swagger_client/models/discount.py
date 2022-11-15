@@ -190,10 +190,11 @@ class Discount(object):
         :param percentage: The percentage of this Discount.  # noqa: E501
         :type: int
         """
-        if percentage is not None and percentage > 100:  # noqa: E501
-            raise ValueError("Invalid value for `percentage`, must be a value less than or equal to `100`")  # noqa: E501
-        if percentage is not None and percentage < 1:  # noqa: E501
-            raise ValueError("Invalid value for `percentage`, must be a value greater than or equal to `1`")  # noqa: E501
+        if percentage is not None:
+            if percentage > 100:
+                raise ValueError("Invalid value for `percentage`, must be a value less than or equal to `100`")  # noqa: E501
+            if percentage < 1:
+                raise ValueError("Invalid value for `percentage`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._percentage = percentage
 
@@ -442,10 +443,11 @@ class Discount(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Discount):
-            return False
-
-        return self.__dict__ == other.__dict__
+        return (
+            self.__dict__ == other.__dict__
+            if isinstance(other, Discount)
+            else False
+        )
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""

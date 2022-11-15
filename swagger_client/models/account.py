@@ -621,9 +621,9 @@ class Account(object):
         """
         if default_vat is None:
             raise ValueError("Invalid value for `default_vat`, must not be `None`")  # noqa: E501
-        if default_vat is not None and default_vat > 1:  # noqa: E501
+        if default_vat > 1:  # noqa: E501
             raise ValueError("Invalid value for `default_vat`, must be a value less than or equal to `1`")  # noqa: E501
-        if default_vat is not None and default_vat < 0:  # noqa: E501
+        if default_vat < 0:  # noqa: E501
             raise ValueError("Invalid value for `default_vat`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._default_vat = default_vat
@@ -686,10 +686,7 @@ class Account(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Account):
-            return False
-
-        return self.__dict__ == other.__dict__
+        return self.__dict__ == other.__dict__ if isinstance(other, Account) else False
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""

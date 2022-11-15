@@ -246,7 +246,7 @@ class OrderLine(object):
         """
         if quantity is None:
             raise ValueError("Invalid value for `quantity`, must not be `None`")  # noqa: E501
-        if quantity is not None and quantity < 1:  # noqa: E501
+        if quantity < 1:  # noqa: E501
             raise ValueError("Invalid value for `quantity`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._quantity = quantity
@@ -632,10 +632,11 @@ class OrderLine(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, OrderLine):
-            return False
-
-        return self.__dict__ == other.__dict__
+        return (
+            self.__dict__ == other.__dict__
+            if isinstance(other, OrderLine)
+            else False
+        )
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""

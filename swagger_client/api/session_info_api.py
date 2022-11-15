@@ -33,7 +33,7 @@ class SessionInfoApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_session(self, id, **kwargs):  # noqa: E501
+    def get_session(self, id, **kwargs):    # noqa: E501
         """Get session info  # noqa: E501
 
           # noqa: E501
@@ -49,13 +49,9 @@ class SessionInfoApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.get_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def get_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def get_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Get session info  # noqa: E501
 
           # noqa: E501
@@ -71,11 +67,13 @@ class SessionInfoApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -93,21 +91,16 @@ class SessionInfoApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -128,7 +121,7 @@ class SessionInfoApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_sessions(self, relation_type, handle, **kwargs):  # noqa: E501
+    def get_sessions(self, relation_type, handle, **kwargs):    # noqa: E501
         """Get sessions by relation type and handle  # noqa: E501
 
           # noqa: E501
@@ -145,13 +138,9 @@ class SessionInfoApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_sessions_with_http_info(relation_type, handle, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_sessions_with_http_info(relation_type, handle, **kwargs)  # noqa: E501
-            return data
+        return self.get_sessions_with_http_info(relation_type, handle, **kwargs)  # noqa: E501
 
-    def get_sessions_with_http_info(self, relation_type, handle, **kwargs):  # noqa: E501
+    def get_sessions_with_http_info(self, relation_type, handle, **kwargs):    # noqa: E501
         """Get sessions by relation type and handle  # noqa: E501
 
           # noqa: E501
@@ -168,11 +157,14 @@ class SessionInfoApi(object):
                  returns the request thread.
         """
 
-        all_params = ['relation_type', 'handle']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'relation_type',
+            'handle',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -197,20 +189,17 @@ class SessionInfoApi(object):
         path_params = {}
         if 'relation_type' in params:
             path_params['relation_type'] = params['relation_type']  # noqa: E501
-        if 'handle' in params:
-            path_params['handle'] = params['handle']  # noqa: E501
+        path_params['handle'] = params['handle']  # noqa: E501
 
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501

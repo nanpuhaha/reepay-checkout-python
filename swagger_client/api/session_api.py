@@ -33,7 +33,7 @@ class SessionApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_charge_session(self, **kwargs):  # noqa: E501
+    def create_charge_session(self, **kwargs):    # noqa: E501
         """Create charge session  # noqa: E501
 
           # noqa: E501
@@ -49,13 +49,9 @@ class SessionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_charge_session_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.create_charge_session_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.create_charge_session_with_http_info(**kwargs)  # noqa: E501
 
-    def create_charge_session_with_http_info(self, **kwargs):  # noqa: E501
+    def create_charge_session_with_http_info(self, **kwargs):    # noqa: E501
         """Create charge session  # noqa: E501
 
           # noqa: E501
@@ -71,11 +67,13 @@ class SessionApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -93,17 +91,13 @@ class SessionApi(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -128,7 +122,7 @@ class SessionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_recurring_session(self, **kwargs):  # noqa: E501
+    def create_recurring_session(self, **kwargs):    # noqa: E501
         """Create recurring session  # noqa: E501
 
           # noqa: E501
@@ -144,13 +138,9 @@ class SessionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_recurring_session_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.create_recurring_session_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.create_recurring_session_with_http_info(**kwargs)  # noqa: E501
 
-    def create_recurring_session_with_http_info(self, **kwargs):  # noqa: E501
+    def create_recurring_session_with_http_info(self, **kwargs):    # noqa: E501
         """Create recurring session  # noqa: E501
 
           # noqa: E501
@@ -166,11 +156,13 @@ class SessionApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -188,17 +180,13 @@ class SessionApi(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -223,7 +211,7 @@ class SessionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_subscription_session(self, **kwargs):  # noqa: E501
+    def create_subscription_session(self, **kwargs):    # noqa: E501
         """Create subscription session  # noqa: E501
 
           # noqa: E501
@@ -239,13 +227,9 @@ class SessionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_subscription_session_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.create_subscription_session_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.create_subscription_session_with_http_info(**kwargs)  # noqa: E501
 
-    def create_subscription_session_with_http_info(self, **kwargs):  # noqa: E501
+    def create_subscription_session_with_http_info(self, **kwargs):    # noqa: E501
         """Create subscription session  # noqa: E501
 
           # noqa: E501
@@ -261,11 +245,13 @@ class SessionApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -283,17 +269,13 @@ class SessionApi(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        body_params = params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -318,7 +300,7 @@ class SessionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_session(self, id, **kwargs):  # noqa: E501
+    def delete_session(self, id, **kwargs):    # noqa: E501
         """Delete session  # noqa: E501
 
           # noqa: E501
@@ -334,13 +316,9 @@ class SessionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_session_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_session_with_http_info(id, **kwargs)  # noqa: E501
-            return data
+        return self.delete_session_with_http_info(id, **kwargs)  # noqa: E501
 
-    def delete_session_with_http_info(self, id, **kwargs):  # noqa: E501
+    def delete_session_with_http_info(self, id, **kwargs):    # noqa: E501
         """Delete session  # noqa: E501
 
           # noqa: E501
@@ -356,11 +334,13 @@ class SessionApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'id',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
+        ]
 
         params = locals()
         for key, val in six.iteritems(params['kwargs']):
@@ -378,21 +358,16 @@ class SessionApi(object):
 
         collection_formats = {}
 
-        path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
+        path_params = {'id': params['id']}
         query_params = []
-
-        header_params = {}
 
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(['application/json'])
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501

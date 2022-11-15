@@ -140,10 +140,11 @@ class CreateOrderLine(object):
         :param vat: The vat of this CreateOrderLine.  # noqa: E501
         :type: float
         """
-        if vat is not None and vat > 1:  # noqa: E501
-            raise ValueError("Invalid value for `vat`, must be a value less than or equal to `1`")  # noqa: E501
-        if vat is not None and vat < 0:  # noqa: E501
-            raise ValueError("Invalid value for `vat`, must be a value greater than or equal to `0`")  # noqa: E501
+        if vat is not None:
+            if vat > 1:
+                raise ValueError("Invalid value for `vat`, must be a value less than or equal to `1`")  # noqa: E501
+            if vat < 0:
+                raise ValueError("Invalid value for `vat`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._vat = vat
 
@@ -253,10 +254,11 @@ class CreateOrderLine(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, CreateOrderLine):
-            return False
-
-        return self.__dict__ == other.__dict__
+        return (
+            self.__dict__ == other.__dict__
+            if isinstance(other, CreateOrderLine)
+            else False
+        )
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
